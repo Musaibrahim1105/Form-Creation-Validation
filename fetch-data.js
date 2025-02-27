@@ -12,9 +12,9 @@ async function fetchUserData() {
         try {
 
 
-        const Response = await fetch(apiUrl)
+        const response = await fetch(apiUrl)
         
-            const users = await Response.json();
+            const users = await response.json();
             dataContainer.innerHTML = '';
     
 
