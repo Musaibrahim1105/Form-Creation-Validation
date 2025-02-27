@@ -2,18 +2,21 @@
 
 async function fetchUserData() {
 
-    try {
+    
         
 
-        const apiUrl = await fetch('https://jsonplaceholder.typicode.com/users');
-        if(apiUrl.ok){
-            const users = await apiUrl.json();
+        const apiUrl = 'https://jsonplaceholder.typicode.com/users';
+        
+        const dataContainer = document.getElementById('api-data')
+        
+        try {
 
-            //console.log(users)
-            
 
-            const dataContainer = document.getElementById('api-data')
+        const Response = await fetch(apiUrl)
+        
+            const users = await Response.json();
             dataContainer.innerHTML = '';
+    
 
             let userList = document.createElement('ul')
 
@@ -29,7 +32,7 @@ async function fetchUserData() {
 
             });
             dataContainer.appendChild(userList)
-        }
+        
 
 
     } catch (error) { 
