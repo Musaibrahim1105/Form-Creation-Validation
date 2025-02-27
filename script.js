@@ -3,15 +3,17 @@ document.addEventListener("DOMContentLoaded", function(){
 
     const form = document.getElementById('registration-form')
     const feedbackDiv = document.getElementById('form-feedback')
-    
+    console.log(feedbackDiv)
 
-    form.addEventListener('submit', (e)=>{
-        e.preventDefault();
+    form.addEventListener('submit', (event)=>{
+        event.preventDefault();
 
 
         const username = document.getElementById('username')
     const email = document.getElementById('email')
     const password = document.getElementById('password')
+
+    console.log(username)
     
 
 
@@ -29,7 +31,7 @@ document.addEventListener("DOMContentLoaded", function(){
         username_error.textContent = 'username must be at least 3 characters long.'
     }
 
-    if(!email.includes("@") || !email.includes(".")){
+    if(!email.includes("@") || !email.includes(".")) {
         isValid=false;
         messages.push("enter a valid email with '@' and '.' ")
     }
